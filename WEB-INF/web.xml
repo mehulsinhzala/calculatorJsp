@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<web-app>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>op</servlet-name>
+		<servlet-class>operation</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+			<servlet-name>op</servlet-name>
+			<url-pattern>/ans</url-pattern>
+		</servlet-mapping>
+</web-app>

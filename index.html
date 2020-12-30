@@ -1,0 +1,76 @@
+<!DOCKTYPE html>
+<html>
+<head>
+	<title>WEB Application</title>
+</head>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+	function validate()
+	{
+		var number_first = document.getElementById('num_one').value;
+		var number_second = document.getElementById('num_two').value;
+		var opration_div = document.getElementById('div_operation').value;
+		
+		var numberRGEX = /^[-\][0-9]+\.?[0-9]*$/;
+		
+		var first_num_Result = numberRGEX.test(number_first);
+		var second_num_Result = numberRGEX.test(number_second);
+		
+		if(first_num_Result == false)
+		{
+			alert('Please enter a valid number');
+			return false;
+		}
+		
+		if(second_num_Result == false)
+		{
+			alert('Please enter a valid number');
+			return false;
+		}
+		if (( myform.opr[0].checked == false ) && ( myform.opr[1].checked == false ) && ( myform.opr[2].checked == false ) && ( myform.opr[3].checked == false ))
+		
+		{
+			alert ( "Please choose your Oparation First");
+			return false;
+		}
+		if( opration_div =="/" && number_second == 0)
+		{
+			alert("Please enter a value greater than 0 ");
+			return false;        
+		}
+				 
+	}
+</script>
+<body style="background:url('g.jpg;');">
+   
+  <div style="margin-top:210px; ">
+  
+	<form id="myform" name="validform" onsubmit="return validate();"   action="ans"  method="post">
+	
+	<h1 align="center" style="color:#000; margin-left:8.5em;"> Arithmetic calculation</h1> 
+	<table style="border:solid 4px #000; margin-left:24.8em; width:56em;height:300px;"  class="table">
+		<tr><td style="color:#000"><b>Enter No 1</b></td>
+		<td style="border:solid 2px #000;"><input type="text" class="form-control" id="num_one" name="a" placeholder="Enter First value" required></td></tr>
+	
+		<tr style="border:solid 2px #000;"><td  style="border:solid 2px #000;color:#000;" rowspan="5"><b>Operator</b></td></tr>
+		<tr style="border:solid 2px #000;"><td style="color:#000"><input type="radio" name="opr" value="+" >Add</td></tr>
+		<tr style="border:solid 2px #000;"><td style="color:#000"><input type="radio" name="opr" value="-">Sub</td></tr>
+		<tr style="border:solid 2px #000;"><td style="color:#000"><input type="radio" name="opr" value="*">Mul</td></tr>
+		<tr><td style="color:#000"><input type="radio"id="div_operation" name="opr" value="/">Div</td></tr>
+	
+		<tr style="border:solid 2px #000;"><td style="border:solid 2px #000;color:#000;"><b>Enter No 2</b></td>
+		<td><input type="text" class="form-control" id="num_two" name="b" placeholder="Enter Second value" required></td></tr>
+	
+	
+		
+		
+		<tr><td  colspan="2"><input type="submit"  class="btn btn-primary" style="margin-left:24em;"  name="submit" value="Calculate"/> <input type="reset" style="margin-left:1em;" class="btn btn-danger" name="submit" value="Reset"/></td></tr>
+		
+</table>
+	</form>
+	</div>
+</body>
+</html>
